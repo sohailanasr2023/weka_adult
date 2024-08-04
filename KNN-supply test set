@@ -1,0 +1,63 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.lazy.IBk -- -K 1 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     adult-weka.filters.unsupervised.attribute.ReplaceMissingValues-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0-weka.filters.supervised.attribute.AttributeSelection-Eweka.attributeSelection.CfsSubsetEval -P 1 -E 1-Sweka.attributeSelection.BestFirst -D 1 -N 5
+Instances:    32561
+Attributes:   6
+              education.num
+              marital.status
+              relationship
+              capital.gain
+              capital.loss
+              income
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+Attribute mappings:
+
+Model attributes          	    Incoming attributes
+--------------------------	    ----------------
+(numeric) education.num   	--> 5 (numeric) education.num
+(nominal) marital.status  	--> 6 (nominal) marital.status
+(nominal) relationship    	--> 8 (nominal) relationship
+(numeric) capital.gain    	--> 11 (numeric) capital.gain
+(numeric) capital.loss    	--> 12 (numeric) capital.loss
+(nominal) income          	--> 15 (nominal) income
+
+
+Time taken to build model: 0.03 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.59 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         112               71.7949 %
+Incorrectly Classified Instances        44               28.2051 %
+Kappa statistic                          0.1961
+Mean absolute error                      0.2656
+Root mean squared error                  0.4917
+Relative absolute error                 43.5672 %
+Root relative squared error             75.2659 %
+Total Number of Instances              156     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.267    0.099    0.522      0.267    0.353      0.214    0.617     0.421     <=50K
+                 0.901    0.733    0.752      0.901    0.820      0.214    0.617     0.765     >50K
+Weighted Avg.    0.718    0.550    0.685      0.718    0.685      0.214    0.617     0.666     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  12  33 |   a = <=50K
+  11 100 |   b = >50K
+
